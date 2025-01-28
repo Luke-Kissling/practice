@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         home: Scaffold(
-      backgroundColor: Colors.deepPurple[200],
       appBar: AppBar(
         title: Text("Practice App"),
         backgroundColor: Colors.deepPurple[300],
@@ -20,21 +20,22 @@ class MyApp extends StatelessWidget {
         leading: Icon(Icons.menu),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
       ),
-      body: Center(
-        child: Container(
-          height: 300,
-          width: 300,
-          decoration: BoxDecoration(
-            color: Colors.deepPurple[300],
-            borderRadius: BorderRadius.circular(8),
+      body: ListView(
+        children: [
+          Container(
+            height: 350,
+            color: Colors.deepPurple,
           ),
-          padding: EdgeInsets.all(25),
-          child: Text("Hello world",
-              style: TextStyle(
-                  fontSize: 28,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold)),
-        ),
+          Container(
+            height: 350,
+          
+            color: Colors.deepPurple[400],
+          ),
+          Container(
+            height: 350,
+            color: Colors.deepPurple[200],
+          ),
+        ],
       ),
     ));
   }
